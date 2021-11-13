@@ -1,0 +1,668 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {;
+  margin-left: 40px;
+  margin-right: 35px;
+  margin-top: 42.5px;
+  background-color: dodgerblue;
+font-size: 19px;}
+p {
+
+}
+div {background-color: dodgerblue;
+position: relative;
+}
+
+input {width: 160px;
+padding: 1px}
+
+h2 {color: darkblue;
+font-size: 26px}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 30px;
+  height: 665px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+  <div class="column" style="background-color:dodgerblue;">
+    <form>
+      <br>
+  <h2>&nbsp &nbsp &nbsp Circle:</h2><br>
+
+
+    <p><label>Radius</label>
+    <input id="r" class="w3-input w3-border" type="number" placeholder="" oninput="circleConverter(this.id,this.value)" onchange="circleConverter(this.id,this.value)">
+
+  </p>
+  <p>
+    <label>Diameter</label>
+    <input id="d" class="w3-input w3-border" type="number" placeholder="" oninput="circleConverter(this.id,this.value)" onchange="circleConverter(this.id,this.value)">
+  </p>
+  <p>
+    <label>Circum-<br>ference</label>
+    <input id="c" class="w3-input w3-border" type="number" placeholder="" oninput="circleConverter(this.id,this.value)" onchange="circleConverter(this.id,this.value)">
+
+  </p>
+  <p>
+    <label>Area</label>
+    <input id="a" class="w3-input w3-border" type="number" placeholder="" oninput="circleConverter(this.id,this.value)" onchange="circleConverter(this.id,this.value)">
+</p>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button type="reset">Reset</button>
+
+</form>
+  </div>
+
+
+
+
+
+
+<script>
+function circleConverter(source,valNum) {
+  valNum = parseFloat(valNum);
+  var inputr = document.getElementById("r");
+  var inputd = document.getElementById("d");
+  var inputc = document.getElementById("c");
+  var inputa = document.getElementById("a");
+
+
+  if (source=="r") {
+    inputd.value=(valNum*2).toFixed(4);
+    inputc.value=(valNum*6.283185307179586232).toFixed(4);
+    inputa.value=(valNum**2)*3.141592653589793116.toFixed(4);
+
+  }
+  if (source=="d") {
+    inputr.value=(valNum/2).toFixed(4);
+    inputc.value=(valNum*3.141592653589793116).toFixed(4);
+    inputa.value=(valNum/2)**2*(3.141592653589793116).toFixed(4);
+
+  }
+  if (source=="c") {
+    inputr.value=(valNum/6.283185307179586232).toFixed(4);
+    inputd.value=(valNum/3.141592653589793116).toFixed(4);
+    inputa.value=(valNum/6.283185307179586232)**2*(3.141592653589793116).toFixed(4);
+
+  }
+  if (source=="a") {
+    inputr.value=(valNum/3.141592653589793116)**(0.5).toFixed(4);
+    inputd.value=(valNum/3.141592653589793116)**(0.5)*(2).toFixed(4);
+    inputc.value=(valNum/3.141592653589793116)**(0.5)*(6.283185307179586232).toFixed(4);
+
+  }
+
+
+}
+</script>
+
+
+
+<div class="column" style="background-color:dodgerblue;">
+  <form>
+
+<br>
+  <h2>&nbspTrigonometry:</h2><br>
+
+
+    <p><label>Angle<sup>o</sup></label>
+    <input id="ang" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+
+  </p>
+  <p>
+    <label> &nbsp Sinθ  &nbsp</label>
+    <input id="sin" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+  </p>
+  <p>
+    <label> &nbsp Cosθ&nbsp</label>
+    <input id="cos" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+
+  </p>
+  <p>
+    <label> &nbsp Tanθ&nbsp</label>
+    <input id="tan" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+</p>
+
+<p>
+  <label> &nbsp Secθ&nbsp</label>
+  <input id="sec" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+</p>
+<p>
+  <label>&nbsp Cscθ&nbsp </label>
+  <input id="csc" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+
+</p>
+<p>
+  <label>&nbsp Cotθ&nbsp </label>
+  <input id="cot" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+</p>
+
+<p>
+  <label>&nbspSinhθ&nbsp </label>
+  <input id="sinh" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+</p>
+<p>
+  <label>Coshθ&nbsp</label>
+  <input id="cosh" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+
+</p>
+<p>
+  <label>Tanhθ&nbsp</label>
+  <input id="tanh" class="w3-input w3-border" type="number" placeholder="" oninput="trigConverter(this.id,this.value)" onchange="trigConverter(this.id,this.value)">
+</p><br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button type="reset">Reset</button>
+</div>
+  
+  <br>
+  &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp<button type="reset">Reset</button>
+  </form>
+
+
+
+
+
+  <script>
+  function trigConverter(source,valNum) {
+    valNum = parseFloat(valNum);
+    var input1 = document.getElementById("ang");
+    var input2 = document.getElementById("sin");
+    var input3 = document.getElementById("cos");
+    var input4 = document.getElementById("tan");
+    var input5 = document.getElementById("sinh");
+    var input6 = document.getElementById("cosh");
+    var input7 = document.getElementById("tanh");
+    var input8 = document.getElementById("sec");
+    var input9 = document.getElementById("csc");
+    var input10 = document.getElementById("cot");
+
+    if (source=="ang") {
+      input2.value=Math.sin((valNum)*(3.1415926535897932384626433/180)).toFixed(16);
+      input3.value=Math.cos((valNum)*(3.1415926535897932384626433/180)).toFixed(16);
+      input4.value=Math.tan((valNum)*(3.1415926535897932384626433/180)).toFixed(16);
+      input5.value=Math.sinh(valNum).toFixed(16);
+      input6.value=Math.cosh(valNum).toFixed(16);
+      input7.value=Math.tanh(valNum).toFixed(16);
+      input8.value=1/(Math.cos((valNum)*(3.1415926535897932384626433/180))).toFixed(16);
+      input9.value=1/(Math.sin((valNum)*(3.1415926535897932384626433/180))).toFixed(16);
+      input10.value=1/(Math.tan((valNum)*(3.1415926535897932384626433/180))).toFixed(16);
+    }
+    if (source=="sin") {
+      input1.value=(Math.asin(valNum))/(3.1415926535897932384626433/180).toFixed(16);
+      input3.value=Math.cos(((Math.asin(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+      input4.value=Math.tan(((Math.asin(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+      input5.value=Math.sinh((Math.asin(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input6.value=Math.cosh((Math.asin(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input7.value=Math.tanh((Math.asin(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input9.value=1/(Math.sin((Math.asin(valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+      input8.value=1/(Math.cos(((Math.asin(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+      input10.value=1/(Math.tan(((Math.asin(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+    }
+    if (source=="cos") {
+      input1.value=(Math.acos(valNum))/(3.1415926535897932384626433/180).toFixed(16);
+      input2.value=Math.sin(((Math.acos(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+      input4.value=Math.tan(((Math.acos(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+      input5.value=Math.sinh((Math.acos(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input6.value=Math.cosh((Math.acos(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input7.value=Math.tanh((Math.acos(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+      input8.value=1/(Math.cos((Math.acos(valNum))/(3.1415926535897932384626433/180)))
+      input9.value=1/(Math.sin(((Math.acos(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+      input10.value=1/(Math.tan(((Math.acos(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+}
+      if (source=="tan") {
+        input1.value=(Math.atan(valNum))/(3.1415926535897932384626433/180).toFixed(16);
+        input2.value=Math.sin(((Math.atan(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+        input3.value=Math.cos(((Math.atan(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180)).toFixed(16);
+        input5.value=Math.sinh((Math.atan(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+        input6.value=Math.cosh((Math.atan(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+        input7.value=Math.tanh((Math.atan(valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+        input8.value=1/(Math.cos((Math.atan(valNum))/(3.1415926535897932384626433/180))).toFixed(16)
+        input9.value=1/(Math.sin(((Math.atan(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+        input10.value=1/(Math.tan(((Math.atan(valNum))/(3.1415926535897932384626433/180))*(3.1415926535897932384626433/180))).toFixed(16);
+}
+     if (source=="sec") {
+
+            input1.value=((Math.acos(1/valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+            input2.value= Math.sin((((Math.acos(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input3.value= Math.cos((((Math.acos(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input4.value= Math.tan((((Math.acos(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input5.value= Math.sinh(((Math.acos(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input6.value= Math.cosh(((Math.acos(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input7.value=Math.tanh(((Math.acos(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input9.value=1/((Math.sin((((Math.acos(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+            input10.value=1/((Math.tan((((Math.acos(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+}
+if (source=="csc") {
+
+       input1.value=((Math.asin(1/valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+       input2.value= Math.sin((((Math.asin(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+       input3.value= Math.cos((((Math.asin(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+       input4.value= Math.tan((((Math.asin(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+       input5.value= Math.sinh(((Math.asin(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+       input6.value= Math.cosh(((Math.asin(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+       input7.value=Math.tanh(((Math.asin(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+       input8.value=1/((Math.cos((((Math.asin(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+       input10.value=1/((Math.tan((((Math.asin(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+     }
+
+     if (source=="cot") {
+
+            input1.value=((Math.atan(1/valNum))/(3.1415926535897932384626433/180)).toFixed(16);
+            input2.value= Math.sin((((Math.atan(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input3.value= Math.cos((((Math.atan(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input4.value= Math.tan((((Math.atan(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)).toFixed(16);
+            input5.value= Math.sinh(((Math.atan(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input6.value= Math.cosh(((Math.atan(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input7.value=Math.tanh(((Math.atan(1/valNum))/(3.1415926535897932384626433/180))).toFixed(16);
+            input8.value=1/((Math.cos((((Math.atan(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+            input9.value=1/((Math.sin((((Math.atan(1/valNum))/(3.1415926535897932384626433/180)))*(3.1415926535897932384626433/180)))).toFixed(16);
+
+          }
+
+
+if (source=="sinh") {
+  input1.value=Math.asinh(valNum).toFixed(16);
+  input2.value=Math.sin((Math.asinh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input3.value=Math.cos((Math.asinh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input4.value=Math.tan((Math.asinh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input6.value=Math.cosh(Math.asinh(valNum)).toFixed(16);
+  input7.value=Math.tanh(Math.asinh(valNum)).toFixed(16);
+  input8.value=1/(Math.cos((Math.asinh(valNum))*(3.1415926535897932384626433/180))).toFixed(16)
+  input9.value=1/(Math.sin((Math.asinh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+  input10.value=1/(Math.tan((Math.asinh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+
+}
+
+if (source=="cosh") {
+  input1.value=Math.acosh(valNum).toFixed(16);
+  input2.value=Math.sin((Math.acosh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input3.value=Math.cos((Math.acosh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input4.value=Math.tan((Math.acosh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input5.value=Math.sinh(Math.acosh(valNum)).toFixed(16);
+  input7.value=Math.tanh(Math.acosh(valNum)).toFixed(16);
+  input8.value=1/(Math.cos((Math.acosh(valNum))*(3.1415926535897932384626433/180))).toFixed(16)
+  input9.value=1/(Math.sin((Math.acosh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+  input10.value=1/(Math.tan((Math.acosh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+
+}
+
+if (source=="tanh") {
+  input1.value=Math.atanh(valNum).toFixed(16);
+  input2.value=Math.sin((Math.atanh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input3.value=Math.cos((Math.atanh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input4.value=Math.tan((Math.atanh(valNum))*(3.1415926535897932384626433/180)).toFixed(16);
+  input5.value=Math.sinh(Math.atanh(valNum)).toFixed(16);
+  input6.value=Math.cosh(Math.atanh(valNum)).toFixed(16);
+  input8.value=1/(Math.cos((Math.atanh(valNum))*(3.1415926535897932384626433/180))).toFixed(16)
+  input9.value=1/(Math.sin((Math.atanh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+  input10.value=1/(Math.tan((Math.atanh(valNum))*(3.1415926535897932384626433/180))).toFixed(16);
+
+
+}
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+<div class="column" style="background-color:dodgerblue;">
+<br>
+<form>
+<h2>&nbsp   &nbsp &nbsp &nbsp Base:</h2><br>
+
+    <p><label>Decimal</label>
+    <input id="1" class="w3-input w3-border" type="number" placeholder="" oninput="baseConverter(this.id,this.value)" onchange="baseConverter(this.id,this.value)">
+
+  </p>
+  <p>
+    <label>&nbsp Binary&nbsp</label>
+    <input id="2" class="w3-input w3-border" type="number" placeholder="" oninput="baseConverter(this.id,this.value)" onchange="baseConverter(this.id,this.value)">
+  </p>
+  &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button type="reset">Reset</button>
+</form>
+</div>
+
+
+
+<script>
+function baseConverter(source,valNum) {
+  valNum = parseFloat(valNum);
+  var input1 = document.getElementById("1");
+  var input2 = document.getElementById("2");
+
+
+
+  if (source=="1") {
+    input2.value=(valNum.toString(5));
+
+
+  }
+  if (source=="2") {
+    input1.value=(valNum.toString(10));
+input2.value=(valNum.toString(2));
+
+  }
+
+
+}
+</script>
+
+
+
+
+
+
+
+
+<script>
+let myNumber = 32;
+document.getElementById("demo").innerHTML =
+"32 = " + "<br>" +
+" Decimal " + myNumber.toString(11) + "<br>" +
+" Hexadecimal " + myNumber.toString(16) + "<br>" +
+" Octal " + myNumber.toString(8) + "<br>" +
+" Binary " + myNumber.toString(2);
+</script>
+
+
+
+<div class="column" style="background-color:dodgerblue;">
+<form>
+  <br>
+  <h2>  &nbsp &nbsp    &nbsp  Other:</h2><br>
+
+  <p><label>  &nbsp &nbsp &nbsp x   &nbsp &nbsp &nbsp </label>
+  <input id="x" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+</p>
+
+<p>
+  <label>  &nbsp &nbsp &nbspx<sup>-1</sup> &nbsp &nbsp</label>
+  <input id="x-1" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+</p>
+
+  <p>
+    <label>  &nbsp &nbsp &nbspx<sup>2</sup>&nbsp &nbsp &nbsp</label>
+    <input id="x2" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+  </p><p>
+      <label>  &nbsp &nbsp &nbspx<sup>3</sup>&nbsp   &nbsp &nbsp  </label>
+      <input id="x3" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+    </p>
+
+
+  <p>
+     <label>  &nbsp &nbsp √x&nbsp &nbsp   &nbsp </label>
+     <input id="2x" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+   </p>
+
+
+   <p>
+      <label>  &nbsp &nbsp3√x &nbsp &nbsp </label>
+      <input id="3x" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+    </p>
+
+  <p>
+    <label>  &nbsp ln(x)&nbsp &nbsp </label>
+    <input id="lnx" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+  </p>
+
+  <p>
+    <label>log<sub>10</sub>(x)</label>
+    <input id="log10x" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+
+  </p>
+
+  <p>
+    <label> &nbsp  &nbsp  &nbspe<sup>x</sup>&nbsp  &nbsp  &nbsp</label>
+    <input id="ex" class="w3-input w3-border" type="number" placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+  </p>
+
+  <p>
+    <label> &nbsp &nbsp  &nbsp|x|&nbsp &nbsp  &nbsp</label>
+    <input id="abs" class="w3-input w3-border" type="number" min="0"placeholder="" oninput="triConverter(this.id,this.value)" onchange="triConverter(this.id,this.value)">
+</p><br>
+&nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp<button type="reset">Reset</button>
+</form>
+
+  </div>
+
+<div class="column" style="background-color:dodgerblue;">
+  </div>
+
+  <script>
+  function triConverter(source,valNum) {
+    valNum = parseFloat(valNum);
+    var input1 = document.getElementById("x");
+    var input2 = document.getElementById("x2");
+    var input3 = document.getElementById("x3");
+    var input4 = document.getElementById("2x");
+    var input5 = document.getElementById("3x");
+    var input6 = document.getElementById("x-1");
+    var input7 = document.getElementById("lnx");
+    var input8 = document.getElementById("log10x");
+    var input9 = document.getElementById("ex");
+    var input10 = document.getElementById("abs");
+
+
+
+
+    if (source=="x") {
+      input2.value=Math.pow(valNum, 2);
+     input3.value=Math.pow(valNum, 3);
+     input4.value=Math.pow(valNum, (1/2));
+     input5.value=Math.pow(valNum, (1/3));
+     input6.value=Math.pow(valNum, -1);
+     input7.value=Math.log(valNum);
+     input8.value=Math.log10(valNum);
+     input9.value=Math.exp(valNum);
+     input10.value=Math.abs(valNum);
+
+
+    }
+    if (source=="x-1") {
+      input1.value=Math.pow(valNum, -1);
+     input3.value=Math.pow(valNum, -1)**3;
+     input4.value=Math.pow(valNum, -1)**0.5;
+     input5.value=Math.pow(valNum, -1)**(1/3);
+     input2.value=Math.pow(valNum, -1)**2;
+     input7.value=Math.log(valNum**-1);
+     input8.value=Math.log10(valNum**-1);
+     input9.value=Math.exp(valNum**-1);
+     input10.value=Math.abs(valNum**-1);
+
+    }
+    if (source=="x2") {
+      input1.value=Math.pow(valNum, (1/2));
+      input6.value=Math.pow(valNum, (1/2))**-1;
+      input3.value=Math.pow(valNum, (1/2))**3;
+      input4.value=Math.pow(valNum, (1/2))**0.5;
+      input5.value=Math.pow(valNum, (1/2))**(1/3);
+      input7.value=Math.log(valNum**0.5);
+      input8.value=Math.log10(valNum**0.5);
+      input9.value=Math.exp(valNum**0.5);
+      input10.value=Math.abs(valNum**(1/2));
+
+
+
+    }  if (source=="x3") {
+        input1.value=Math.pow(valNum, (1/3));
+        input2.value=Math.pow(valNum, (1/3))**2;
+        input4.value=Math.pow(valNum, (1/3))**(1/2);
+        input5.value=Math.pow(valNum, (1/3))**(1/3);
+        input6.value=Math.pow(valNum, (1/3))**-1;
+        input7.value=Math.log(valNum**(1/3));
+        input8.value=Math.log10(valNum**(1/3));
+        input9.value=Math.exp(valNum**(1/3));
+        input10.value=Math.abs(valNum**(1/3));
+
+
+
+
+      }  if (source=="2x") {
+        input1.value=Math.pow(valNum, 2);
+        input2.value=Math.pow(valNum, 2)**2;
+        input3.value=Math.pow(valNum, 2)**3;
+        input5.value=Math.pow(valNum, 2)**(1/3);
+        input6.value=Math.pow(valNum, 2)**-1;
+        input7.value=Math.log(valNum**2);
+        input8.value=Math.log10(valNum**2);
+        input9.value=Math.exp(valNum**2);
+        input10.value=Math.abs(valNum**2);
+
+
+
+      }  if (source=="3x") {
+          input1.value=Math.pow(valNum, 3);
+          input2.value=Math.pow(valNum, 3)**2;
+          input4.value=Math.pow(valNum, 3)**(1/2);
+          input3.value=Math.pow(valNum, 3)**3;
+          input6.value=Math.pow(valNum, 3)**-1;
+          input7.value=Math.log(valNum**3);
+          input8.value=Math.log10(valNum**3);
+          input9.value=Math.exp(valNum**3);
+          input10.value=Math.abs(valNum**3);
+
+
+
+        }  if (source=="lnx") {
+            input1.value=(Math.exp(valNum));
+            input2.value=(Math.exp(valNum))**2;
+            input4.value=(Math.exp(valNum))**(1/2);
+            input3.value=(Math.exp(valNum))**3;
+            input6.value=(Math.exp(valNum))**-1;
+            input5.value=(Math.exp(valNum))**(1/3);
+            input8.value=Math.log10(Math.exp(valNum));
+            input9.value=Math.exp(Math.exp(valNum));
+            input10.value=Math.abs(Math.exp(valNum));
+
+
+          }  if (source=="log10x") {
+              input1.value=10**(valNum);
+              input2.value=(10**(valNum))**2;
+              input4.value=(10**(valNum))**(1/2);
+              input3.value=(10**(valNum))**3;
+              input6.value=(10**(valNum))**-1;
+              input5.value=(10**(valNum))**(1/3);
+              input7.value=Math.log(10**(valNum));
+              input9.value=Math.exp(10**(valNum));
+              input10.value=Math.abs(10**(valNum));
+
+
+            }  if (source=="ex") {
+
+                input1.value=(Math.log(valNum));
+                input2.value=(Math.log(valNum))**2;
+                input4.value=(Math.log(valNum))**(1/2);
+                input3.value=(Math.log(valNum))**3;
+                input6.value=(Math.log(valNum))**-1;
+                input5.value=(Math.log(valNum))**(1/3);
+                input8.value=Math.log10(Math.log(valNum));
+                input7.value=Math.log(Math.log(valNum));
+                input10.value=Math.abs(Math.log(valNum));
+
+              }  if (source=="abs") {
+
+                input2.value=Math.pow(valNum, 2);
+               input3.value=Math.pow(valNum, 3);
+               input4.value=Math.pow(valNum, (1/2));
+               input5.value=Math.pow(valNum, (1/3));
+               input6.value=Math.pow(valNum, -1);
+               input7.value=Math.log(valNum);
+               input8.value=Math.log10(valNum);
+               input9.value=Math.exp(valNum);
+               input1.value=(valNum);
+
+
+                      }
+
+  }
+  </script>
+
+<br><br><br><br>
+
+  <div class="column" style="background-color:dodgerblue;">
+  <br><br><br>
+  <form>
+  <h2>&nbsp   &nbsp &nbsp &nbspTime:</h2><br>
+
+      <p><label>Minutes</label>
+      <input id="21" class="w3-input w3-border" type="number" placeholder="" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+
+    </p>
+    <p>
+      <label>&nbsp Seconds&nbsp</label>
+      <input id="22" class="w3-input w3-border" type="number" placeholder="" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+    </p>
+    &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button type="reset">Reset</button>
+  </form>
+  </div>
+
+<div class="column" style="background-color:dodgerblue;">
+</div>
+
+
+
+  <script>
+  function timeConverter(source,valNum) {
+    valNum = parseFloat(valNum);
+    var input1 = document.getElementById("21");
+    var input2 = document.getElementById("22");
+
+
+
+    if (source=="22") {
+      input1.value=(valNum/60);
+
+
+    }
+    if (source=="21") {
+
+  input2.value=(valNum*60);
+
+    }
+
+
+  }
+  </script>
+
+
+</body>
+</html>
